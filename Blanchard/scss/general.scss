@@ -1,0 +1,986 @@
+:root {
+  --text-color: #333;
+  --second-text: #fff;
+  --bg-color: #e5e5e5;
+  --second-bg-color: #000;
+  --hover-color: #c283f3;
+  --active-color: #7943a4;
+  --btn-color: #9d5cd0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: "Open Sans", sans-serif;
+  min-width: 320px;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.title {
+  margin-top: 0;
+  color: var(--text-color);
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 23px;
+  &_color {
+    color: var(--second-text);
+  }
+}
+
+// HEADER_______________________________HEADER_______________________________HEADER_______________________________HEADER_______________________________
+.header {
+  position: relative;
+  z-index: 10;
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: var(--second-bg-color);
+  }
+  &::after {
+    content: "";
+    top: 100px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+.menu-icon {
+  display: none;
+}
+.header-logo {
+  padding: 3px;
+  outline: none;
+  &:focus-visible {
+    outline: 1px solid var(--btn-color);
+  }
+}
+
+.menu-wrppaer {
+  display: flex;
+  padding: 36px 0;
+}
+
+.container {
+  max-width: 1630px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.nav {
+  margin-right: 274px;
+}
+.burger-wrapper {
+  display: none;
+}
+.burger-icon {
+  display: none;
+}
+.burger-nav {
+  display: none;
+}
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 56px;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 3px;
+    transition: color 0.3s ease;
+    color: var(--second-text);
+    text-decoration: none;
+    outline: none;
+    &:hover {
+      color: var(--hover-color);
+    }
+    &:active {
+      color: var(--active-color);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--btn-color);
+    }
+  }
+}
+.header-link {
+  font-size: 18px;
+  background-size: 13px 13px;
+  padding: 5px;
+  margin-right: -5px;
+  color: var(--second-text);
+  transition: color 0.3s ease;
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    color: var(--hover-color);
+  }
+  &:hover .header-icon__item {
+    fill: var(--hover-color);
+  }
+  &:active {
+    color: var(--active-color);
+  }
+  &:active .header-icon__item {
+    fill: var(--active-color);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--btn-color);
+  }
+}
+.header-icon__item {
+  fill: #fff;
+  transition: fill 0.3s ease;
+}
+
+.direction-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 0;
+}
+
+.direction-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.direction-list {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  padding: 26px 0 22px 0;
+  margin-left: -5px;
+  position: relative;
+  z-index: 1;
+  &__item {
+    position: relative;
+  }
+  &__item:not(:last-child) {
+    margin-right: 90px;
+  }
+
+  &__link {
+    font-size: 18px;
+    padding: 3px 20px 3px 3px;
+    position: relative;
+    z-index: 1;
+    color: var(--second-text);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    outline: none;
+    &::after {
+      top: 12px;
+      right: 7px;
+      content: "";
+      border: solid var(--second-text);
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      transform: rotate(45deg);
+      position: absolute;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    &:hover {
+      color: var(--hover-color);
+    }
+    &:hover::after {
+      border-color: var(--hover-color);
+    }
+    &:active {
+      color: var(--active-color);
+    }
+    &:active::after {
+      border-color: var(--active-color);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--btn-color);
+    }
+  }
+}
+
+.arrow-active::after {
+  transform: rotate(225deg);
+  border-color: var(--btn-color);
+}
+
+.artists-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 42px;
+  left: 0px;
+  display: none;
+
+  position: absolute;
+  background: #00000066;
+  height: 300px;
+  width: 300px;
+  padding: 40px;
+  z-index: 10;
+
+  &__item {
+    padding: 14px 11px;
+    position: relative;
+    cursor: pointer;
+    transition: outline 0.3s ease;
+    position: relative;
+
+    &:hover {
+      outline: 1px solid var(--hover-color);
+    }
+  }
+  &__item:active &__link::after {
+    opacity: 1;
+  }
+
+  &__item_realism {
+    &:nth-child(1n) {
+      background: url("../img/header/dropdown/realism/tintoretto-min.jpg") no-repeat center center;
+    }
+    &:nth-child(2n) {
+      background: url("../img/header/dropdown/realism/fridrih-min.jpg") no-repeat center center;
+    }
+    &:nth-child(3n) {
+      background: url("../img/header/dropdown/realism/leonardo-min.jpg") no-repeat center center;
+    }
+    &:nth-child(4n) {
+      background: url("../img/header/dropdown/realism/verrokiyo-min.jpg") no-repeat center center;
+    }
+  }
+
+  &__item_impressionism {
+    &:nth-child(1n) {
+      background: url("../img/header/dropdown/impressionism/mone-min.jpg") no-repeat center center;
+    }
+    &:nth-child(2n) {
+      background: url("../img/header/dropdown/impressionism/sisley-min.jpg") no-repeat center center;
+    }
+    &:nth-child(3n) {
+      background: url("../img/header/dropdown/impressionism/mane-min.jpg") no-repeat center center;
+    }
+    &:nth-child(4n) {
+      background: url("../img/header/dropdown/impressionism/renuar-min.jpg") no-repeat center center;
+    }
+  }
+
+  &__item_post-impressionism {
+    &:nth-child(1n) {
+      background: url("../img/header/dropdown/post-impressionism/van-gogh-min.jpg") no-repeat center center;
+    }
+    &:nth-child(2n) {
+      background: url("../img/header/dropdown/post-impressionism/sezan-min.jpg") no-repeat center center;
+    }
+    &:nth-child(3n) {
+      background: url("../img/header/dropdown/post-impressionism/ghogen-min.jpg") no-repeat center center;
+    }
+    &:nth-child(4n) {
+      background: url("../img/header/dropdown/post-impressionism/serra-min.jpg") no-repeat center center;
+    }
+  }
+
+  &__item_avant-gard {
+    &:nth-child(1n) {
+      background: url("../img/header/dropdown/avangard/kandinskiy-min.jpg") no-repeat center center;
+    }
+    &:nth-child(2n) {
+      background: url("../img/header/dropdown/avangard/marinetty-min.jpg") no-repeat center center;
+    }
+    &:nth-child(3n) {
+      background: url("../img/header/dropdown/avangard/malevich-min.jpg") no-repeat center center;
+    }
+    &:nth-child(4n) {
+      background: url("../img/header/dropdown/avangard/picasso-min.jpg") no-repeat center center;
+    }
+  }
+
+  &__item_futurism {
+    &:nth-child(1n) {
+      background: url("../img/header/dropdown/futurism/karra-min.jpg") no-repeat center center;
+    }
+    &:nth-child(2n) {
+      background: url("../img/header/dropdown/futurism/pratella-min.jpg") no-repeat center center;
+    }
+    &:nth-child(3n) {
+      background: url("../img/header/dropdown/futurism/severiny-min.jpg") no-repeat center center;
+    }
+    &:nth-child(4n) {
+      background: url("../img/header/dropdown/futurism/balla-min.jpg") no-repeat center center;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--second-text);
+    text-decoration: none;
+    outline: none;
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+      outline: 2px solid var(--active-color);
+      opacity: 0;
+    }
+  }
+}
+.show {
+  display: block;
+}
+
+.artists-list__item:nth-child(n) {
+  background-size: cover;
+}
+.direction-form-close {
+  display: none;
+}
+
+.direction-form {
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+  // margin-right: 38px;
+  &:hover &__icon,
+  &:hover &__input {
+    fill: var(--hover-color);
+    border-color: var(--hover-color);
+  }
+  &__icon {
+    fill: var(--second-text);
+    transition: fill 0.3s ease;
+  }
+  &__input {
+    position: relative;
+    z-index: 2;
+    order: 2;
+    background: none;
+    border: none;
+    color: var(--hover-color);
+    outline: none;
+    border-bottom: 1px solid var(--second-text);
+    transition: border-color 0.3s ease;
+    width: 220px;
+    &::placeholder {
+      color: var(--second-text);
+      font-size: 18px;
+    }
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    order: 1;
+    position: relative;
+    top: 4px;
+    left: -7px;
+    display: inline-block;
+    outline: none;
+    &:before {
+      content: "";
+      top: -7px;
+      left: 1px;
+      position: absolute;
+      width: 32px;
+      height: 35px;
+      outline: 1px solid var(--active-color);
+      opacity: 0;
+    }
+    &::after {
+      content: "";
+      top: -7px;
+      left: 40px;
+      position: absolute;
+      width: 225px;
+      height: 35px;
+      outline: 1px solid var(--active-color);
+      opacity: 0;
+    }
+    &:focus-visible::before {
+      opacity: 1;
+    }
+  }
+
+  &__input:focus-visible + &__btn::after {
+    opacity: 1;
+  }
+
+  &__close {
+    display: none;
+  }
+}
+
+.search-btn {
+  display: none;
+}
+
+.simplebar-scrollbar {
+  width: 8px;
+}
+
+.simplebar-scrollbar::before {
+  background: var(--btn-color);
+  opacity: 1;
+}
+
+// HERO______________________HERO________________HERO___________________HERO_____________________HERO_______________
+.hero {
+  margin-top: -170px;
+      // margin-bottom: 100px;
+  overflow: hidden;
+  position: relative;
+
+
+  &__slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  &__slide_one {
+    background: url("../img/hero/hero-castle-min.jpg") no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    opacity: 1;
+    animation: hero-scale-animation 35s linear 0s infinite alternate,
+      hero-castle-animation 35s linear 0s infinite normal;
+  }
+  &__slide_two {
+    background: url("../img/hero/birmingham-museums-second-min.jpg") no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    opacity: 1;
+    animation: hero-scale-animation 35s linear 0s infinite alternate, hero-sky-animation 35s linear 0s infinite normal;
+  }
+  &__slide_three {
+    background: url("../img/hero/birmingham-museums-third-min.jpg") no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    opacity: 1;
+    animation: hero-scale-animation 35s linear 0s infinite alternate,
+      hero-garden-animation 35s linear 0s infinite normal;
+  }
+}
+
+
+
+.hero-container {
+  position: relative;
+  padding: 242px 15px 144px 15px;
+  z-index: 1;
+}
+
+.scene {
+}
+
+.hero__title {
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  max-width: 600px;
+  margin-bottom: 17px;
+  margin-top: 0;
+}
+.hero__content {
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 580px;
+  margin-bottom: 120px;
+}
+.hero__btn {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--second-text);
+  padding: 21.5px 34px;
+  border-radius: 100px;
+  background: var(--btn-color);
+  border: 3px solid var(--btn-color);
+  transition: border-color 0.3s ease;
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  &::before {
+    content: "";
+    top: -8px;
+    left: -8px;
+    border: 2px solid var(--hover-color);
+    width: 324px;
+    height: 80px;
+    position: absolute;
+    border-radius: 100px;
+    opacity: 0;
+  }
+  &:hover {
+    border-color: #d1a9f0;
+  }
+  &:active {
+    background: var(--active-color);
+  }
+  &:focus::before {
+    opacity: 1;
+  }
+}
+
+// ABOUT-------------------ABOUT-------------------ABOUT-------------------ABOUT-------------------ABOUT-------------------
+
+.about {
+  &__container {
+    padding-top: 85px;
+    padding-bottom: 52px;
+  }
+
+  &__title {
+  }
+
+  &__content {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 32px;
+    max-width: 1080px;
+  }
+}
+
+// GALLERY------------------GALLERY------------------GALLERY------------------GALLERY------------------GALLERY------------------GALLERY------------------
+.gallery {
+  background: url("../img/gallery/birmingham-museum-min.jpg") no-repeat center center;
+  background-size: cover;
+  &__container {
+    min-width: 0;
+    display: flex;
+    padding-top: 85px;
+    // max-height: 995px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__wrapper {
+    order: 1;
+
+    flex: 1 0 auto;
+
+  }
+
+
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__label {
+    color: var(--second-text);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &__select {
+  }
+
+  &__content {
+    order: 3;
+    color: var(--second-text);
+    max-width: 400px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0;
+    position: relative;
+    top: -120px;
+  }
+  &__link {
+    color: var(--hover-color);
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+// choises
+
+.choices {
+  color: var(--second-text);
+  max-width: 400px;
+  margin-top: 16px;
+}
+
+.choices.is-open .choices__inner {
+  border-radius: 6px;
+}
+
+.choices__inner {
+  background-color: inherit;
+  border-radius: 6px;
+}
+.choices__list {
+  background-color: inherit;
+  border-radius: 6px;
+  margin-bottom: -1px;
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: rgba($color: #000, $alpha: 0.5);
+}
+.choices__list > .is-selected {
+  display: none;
+}
+.choices__item--choice {
+  border-bottom: 1px solid #fff;
+}
+.choices[data-type*="select-one"]::after {
+  content: "";
+  height: 3px;
+  width: 3px;
+  border-bottom: 1px solid var(--second-text);
+  border-right: 1px solid var(--second-text);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.choices[data-type*="select-one"].is-open::after {
+  content: "";
+  height: 3px;
+  width: 3px;
+  border-bottom: 1px solid var(--second-text);
+  border-right: 1px solid var(--second-text);
+  transform: translateY(5px) rotate(225deg);
+  pointer-events: none;
+}
+
+.swiper-gallery {
+  margin: 0;
+  order: 2;
+  min-width: 0;
+  width: 1150px;
+  height: 830px;
+  padding-top: 80px;
+  padding-left: 25px;
+  &__slide {
+    height: calc((100% - 50px) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  &__link {
+    position: relative;
+    &::before {
+      content: "";
+      top: 8%;
+      left: 8%;
+      width: calc(100% - 60px);
+      height: calc(100% - 60px);
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5) url("../img/gallery/gallery-search-icon.svg") no-repeat center center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+  &__picture {
+    display: block;
+    max-width: 350px;
+    max-height: 350px;
+    object-fit: cover;
+  }
+}
+
+.gallery__pagination {
+  font-size: 16px;
+  color: var(--second-text);
+  top: 23px;
+  display: flex;
+  left: 55px;
+  width: 30px;
+  height: 30px;
+}
+
+.gallery__btn-prev {
+  left: 3px;
+  top: 40px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #666;
+  outline: none;
+  &:hover {
+    background: var(--hover-color);
+  }
+  &:active {
+    background: var(--active-color);
+    border: 1px solid var(--hover-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--hover);
+  }
+  &:hover::after {
+    border-color: var(--second-bg-color);
+  }
+}
+
+.gallery__btn-prev::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(135deg);
+
+}
+
+.gallery__btn-next {
+  top: 40px;
+  left: 103px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid inherit;
+  border-radius: 50%;
+  background: #666;
+  outline: none;
+  &:hover {
+    background: var(--hover-color);
+  }
+  &:active {
+    background: var(--active-color);
+    border: 1px solid var(--hover-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--hover);
+
+  }
+  &:hover::after {
+    border-color: var(--second-bg-color);
+  }
+}
+
+.gallery__btn-next::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(315deg);
+}
+
+// popup  popup popup  popup  popup  popup  popup  popup  popup  popup
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+  z-index: 100;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+  &__content {
+    display: flex;
+    background-color: #fff;
+    color: #000;
+    max-width: 900px;
+    position: relative;
+    opacity: 0;
+    transform: translate(0px, -100%);
+    transition: all 0.8s ease;
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 20px;
+    &::before {
+      content: "";
+      top: 10;
+      left: 0;
+      position: absolute;
+      height: 1px;
+      width: 20px;
+      border-top: 1px solid #000;
+      transform: rotate(315deg);
+    }
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 1px;
+      width: 20px;
+      border-top: 1px solid #000;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__img {
+    height: 500px;
+    width: 400px;
+  }
+
+  &__wrapper {
+    padding: 50px;
+  }
+
+  &__autor {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-color);
+  }
+  &__name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-color);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &__time {
+    // margin: 0;
+    font-size: 12px;
+    color: #969696;
+  }
+  &__discription {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--text-color);
+  }
+}
+
+.popup.open .popup__content {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+@keyframes hero-scale-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes hero-sky-animation {
+  0% {
+   opacity: 1;
+  }
+  30% {
+    opacity: 1;
+   }
+  31% {
+    opacity: 0;
+   }
+  100% {
+    opacity: 0;
+
+  }
+}
+@keyframes hero-garden-animation {
+  0% {
+    opacity: 0;
+   }
+   29% {
+     opacity: 0;
+   }
+   30% {
+     opacity: 1;
+    }
+
+    61% {
+      opacity: 1;
+    }
+    62% {
+      opacity: 0;
+    }
+   100% {
+     opacity: 0;
+
+   }
+}
+@keyframes hero-castle-animation {
+  0% {
+    opacity: 0;
+   }
+   30% {
+     opacity: 0;
+    }
+   31% {
+     opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    61% {
+      opacity: 1;
+    }
+   100% {
+     opacity: 1;
+
+   }
+}

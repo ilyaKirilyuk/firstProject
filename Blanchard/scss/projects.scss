@@ -1,0 +1,250 @@
+.projects {
+  &__container {
+    padding-top: 85px;
+    padding-bottom: 80px;
+  }
+  &__swiper-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-color);
+    margin-top: 18px;
+    margin-bottom: 23px;
+  }
+
+  &__title {
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--text-color);
+    max-width: 1080px;
+  }
+
+  &__wrapper {
+    position: relative;
+    cursor: pointer;
+    width: fit-content;
+    &:focus-visible {
+      outline: 1px solid var(--active-color);
+    }
+    &:hover .projects__icon-path-two {
+      fill: #fff;
+    }
+    &:hover .projects__icon-path-one {
+      fill: #9d5cd0;
+    }
+    &:focus .projects__icon-path-two {
+      fill: #fff;
+    }
+    &:focus .projects__icon-path-one {
+      fill: #9d5cd0;
+    }
+    &:hover .projects__popup {
+     display: block;
+    }
+    &:focus .projects__popup {
+      display: block;
+    }
+  }
+
+  &__icon {
+    &-path-one {
+      stroke: #9d5cd0;
+      transition: fill 0.3s ease;
+    }
+    &-path-two {
+      fill: #9d5cd0;
+      transition: fill 0.3s ease;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    background-color: #cacaca;
+    width: max-content;
+    max-width: 264px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--second-text);
+    display: none;
+
+    &_position-one {
+      top: -60px;
+      left: -123px;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 5px 0 5px;
+        border-color: #cacaca transparent transparent transparent;
+        position: relative;
+        bottom: -35px;
+        left: -50%;
+      }
+    }
+    &_position-two {
+      top: -77px;
+      left: -124px;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 5px 0 5px;
+        border-color: #cacaca transparent transparent transparent;
+        position: relative;
+        bottom: -35px;
+        left: -12%;
+      }
+    }
+    &_position-three {
+      top: -44px;
+      left: -105px;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 5px 0 5px;
+        border-color: #cacaca transparent transparent transparent;
+        position: relative;
+        bottom: -35px;
+        left: -50%;
+      }
+    }
+  }
+  &__link {
+    &:hover {
+      color: var(--hover-color);
+    }
+    &:active {
+      color: var(--active-color);
+    }
+    &:focus-visible {
+      outline: 1px solid var(--active-color);
+    }
+  }
+}
+
+
+.projects-swiper {
+  order: 2;
+  margin: 0;
+  height: 150px;
+  max-width: 1455px;
+
+
+
+  &__img {
+    filter: grayscale(1);
+  }
+
+  &__wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+  }
+
+  &__slide {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #CACACA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    &:hover .projects-swiper__img {
+     filter: grayscale(0);
+    }
+  }
+
+  &__prev {
+  }
+
+  &__next {
+  }
+}
+
+.projects-swiper-prev {
+  order: 1;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ececec;
+  outline: none;
+
+  &:hover {
+    background: var(--hover-color);
+  }
+  &:active {
+    background: var(--active-color);
+    border: 1px solid var(--hover-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--hover);
+  }
+  &::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(135deg);
+  }
+  &:hover::after {
+    border-color: var(--second-bg-color);
+  }
+}
+
+.projects-swiper-next {
+  order: 3;
+  position: relative;
+  width: 30px;
+
+  height: 30px;
+  border: 1px solid inherit;
+  border-radius: 50%;
+  background: #ececec;
+  outline: none;
+  &:hover {
+    background: var(--hover-color);
+  }
+  &:active {
+    background: var(--active-color);
+    border: 1px solid var(--hover-color);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--hover);
+  }
+  &::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(315deg);
+  }
+  &:hover::after {
+    border-color: var(--second-bg-color);
+  }
+}
+
+.projects-swiper-wrpapper {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+
+
+
+
+
+

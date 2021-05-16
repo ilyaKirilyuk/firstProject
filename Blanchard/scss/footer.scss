@@ -1,0 +1,44 @@
+
+.footer {
+  background: #000;
+  &__container {
+    padding-top: 47px;
+    padding-bottom: 47px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__footer-logo {
+
+  }
+
+  &__links-wrapper {
+  }
+  &__social {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-size: 45px;
+    border-radius: 50%;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &-social_vk {
+    background: url('../img/footer/vk.png') no-repeat center;
+
+  }
+
+  &-social_instagram {
+    background: url('../img/footer/instagram.png') no-repeat center;
+  }
+
+  &-social_facebook {
+    background: url('../img/footer/facebook.png') no-repeat center;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,294 @@
+.catalog {
+  &__container {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  &__discription {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+
+
+  &__content {
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--text-color);
+    margin: 0;
+    max-width: 1080px;
+  }
+}
+
+.countries-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-top: 8px;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+  &__btn {
+    height: 46px;
+    width: 46px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 51%;
+    transition: box-shadow 0.3s ease;
+    outline: none;
+    position: relative;
+    &::before {
+      content: "";
+      width: 130%;
+      height: 130%;
+      position: absolute;
+      top: -9px;
+      left: -9px;
+      border-radius: 51%;
+      border: 2px solid var(--active-color);
+      opacity: 0;
+    }
+    &.country-btn::before {
+      opacity: 1;
+    }
+    &:hover {
+      box-shadow: 0px 0px 20px rgba(157, 92, 208, 0.7);
+    }
+    &:active {
+      border: 1px solid var(--active-color);
+      box-shadow: none;
+    }
+    &:focus-visible::before {
+      opacity: 1;
+    }
+    &_france {
+      background: url("../img/catalog/icons/france.png") no-repeat center center;
+    }
+    &_germany {
+      background: url("../img/catalog/icons/germany.png") no-repeat center center;
+    }
+    &_italy {
+      background: url("../img/catalog/icons/italy.png") no-repeat center center;
+    }
+    &_russia {
+      background: url("../img/catalog/icons/russia.png") no-repeat center center;
+    }
+    &_belgium {
+      background: url("../img/catalog/icons/belgium.png") no-repeat center center;
+    }
+  }
+}
+
+.catalog-item {
+  &__country {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+}
+
+.country-active {
+  display: flex;
+}
+
+._smooth {
+  opacity: 1;
+}
+
+.catalog-artist {
+  margin-right: 50px;
+  &__wrapper {
+    display: none;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 750px;
+    max-height: 750px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+
+  &__time {
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  &__discription {
+    max-width: 749px;
+    line-height: 32px;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 0;
+  }
+}
+.tab-content-active {
+  display: block;
+}
+.artist-lists-wrapper {
+  margin-left: auto;
+}
+.catalog-time {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: -1px;
+
+  &__wrapper {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #cacaca;
+    &_border {
+      border-top: 1px solid #cacaca;
+    }
+    &::after {
+      content: "";
+      top: -3px;
+      left: 0;
+      position: absolute;
+      outline: 1px solid var(--active-color);
+      height: 106%;
+      width: 100%;
+      display: none;
+    }
+    &:focus-visible::after {
+      display: block;
+    }
+    &:hover {
+      color: var(--hover-color);
+      border-color: var(--hover-color);
+    }
+    &:hover .catalog-time__icon {
+      background-color: var(--hover-color);
+    }
+    &:hover .catalog-time__icon::before {
+      border-color: #fff;
+    }
+
+    &:active {
+      color: var(--active-color);
+      border-color: var(--active-color);
+    }
+    &:active .catalog-time__icon {
+      background-color: var(--active-color);
+    }
+  }
+
+  &__wrapper.catalog-time__wrapper_active .catalog-time__icon::before {
+    transform: rotate(225deg);
+  }
+
+  &__date {
+    position: relative;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    padding: 38px 1px 43px 1px;
+  }
+  &__icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #eaeaea;
+    position: absolute;
+    top: 26%;
+    right: 0;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    &::before {
+      content: "";
+      top: 42%;
+      left: 43%;
+      width: 6px;
+      height: 6px;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      position: absolute;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+  }
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    max-width: 800px;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    border-bottom: 1px solid transparent;
+    transition: height 0.3s ease;
+    margin-bottom: -3px;
+  }
+  &__wrapper.catalog-time__wrapper_active {
+    border-bottom: 1px solid var(--hover-color);
+    &:active {
+      border-color: var(--active-color);
+    }
+  }
+  &__wrapper.catalog-time__wrapper_active + &__list {
+    margin-bottom: -2px;
+    border-color: var(--hover-color);
+  }
+
+  &__artist {
+    align-self: center;
+    text-decoration: none;
+    flex: 1 1 33.333%;
+    position: relative;
+  }
+  &__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: height 0.3s ease;
+    outline: none;
+    &:hover {
+      color: var(--hover-color);
+      text-decoration: underline;
+    }
+    &:active {
+      color: var(--active-color);
+      text-decoration: none;
+    }
+    &:focus-visible {
+      outline: 1px solid var(--hover-color);
+    }
+    &.btn-active {
+      outline: 1px solid var(--active-color);
+    }
+  }
+  &__item {
+    padding: 0;
+  }
+  .catalog-time__wrapper.catalog-time__wrapper_active + &__list {
+    height: 341px;
+    padding: 20px 1px;
+    margin: 0;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+.just-validate-tooltip-container {
+  width: 400px;
+}
+
+.contacts {
+  &__title {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1630px;
+    margin-bottom: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #cacaca;
+  }
+
+
+  &__content-wrapper {
+    padding: 100px 6.35417vw 0 Max(30px, calc((100vw - 1600px) / 2));
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__adress-name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+
+  &__adress {
+    font-style: normal;
+    margin-bottom: 36px;
+  }
+
+  &__mobile-map {
+    width: 64.47917vw;
+    height: 320px;
+    display: none;
+  }
+
+  &__form-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 0;
+    color: var(--text-color);
+    font-weight: 400;
+
+    margin-bottom: 15px;
+
+  }
+
+  &__form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    margin-bottom: 23px;
+    border: 1px solid #333333;
+    border-radius: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-color: var(--text-color);
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    padding: 17px 35px;
+    max-width: 160px;
+    border-radius: 100px;
+    background: none;
+    color: var(--active-color);
+    border: 1px solid var(--active-color);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 19px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__links-title {
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  &__lins-wrapper {
+  }
+
+  &__messenger_whatsupp {
+    background: url("../img/contacts/whutsupp.svg") no-repeat;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: brightness(50%);
+    }
+  }
+
+  &__messenger_telegram {
+    background: url("../img/contacts/telegram.svg") no-repeat;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: brightness(50%);
+    }
+  }
+
+  &__map {
+    width: 64.47917vw;
+    height: 700px;
+  }
+}
+
+
+

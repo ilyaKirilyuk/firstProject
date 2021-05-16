@@ -1,0 +1,116 @@
+
+// SWIPER
+
+.events {
+  &__container {
+    padding-bottom: 79px;
+  }
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    color: var(--active-color);
+    padding: 17px 35px;
+    border: 2px solid var(--active-color);
+    border-radius: 100px;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &_hidden {
+      display: none;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.events-swiper {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &__slide {
+    max-width: calc((100% / 3) - 33.5px);
+    min-height: 700px;
+    margin-bottom: 50px;
+
+    &_hidden {
+      display: none;
+    }
+
+    &_active {
+      display: block;
+    }
+    &:not(:nth-child(3n)) {
+      margin-right: 50px;
+    }
+  }
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: 0px 19px 38px 50px;
+    margin-top: -5px;
+    border-right: 1px solid #cacaca;
+    border-left: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+  }
+
+  &__discription {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #999999;
+    max-width: 135px;
+    align-self: flex-end;
+    &_width {
+      max-width: 190px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 7px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--text-color);
+  }
+
+  &__content {
+    margin-top: 5px;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--text-color);
+    flex: 1 1 auto;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--active-color);
+    border-bottom: 1px solid var(--active-color);
+    max-width: 90px;
+  }
+
+  &__pagination {
+    display: none;
+  }
+}
+
+
