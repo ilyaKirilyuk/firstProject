@@ -1,0 +1,3678 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECSport</title>
+
+  <link rel="preload" href="fonts/Gilroy-Bold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/Gilroy-Bold.woff" as="font" crossorigin="">
+  <link rel="preload" href="fonts/Gilroy-Medium.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/Gilroy-Medium.woff" as="font" crossorigin="">
+  <link rel="preload" href="fonts/Gilroy-Semibold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/Gilroy-Semibold.woff" as="font" crossorigin="">
+  <!-- style -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- scripts -->
+  <script defer src="scripts/burger.js"></script>
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer src="scripts/swiper-init.js"></script>
+  <script defer src="scripts/general.js"></script>
+  <script defer src="https://www.google.com/recaptcha/api.js"></script>
+  <script defer src="scripts/just-validate.min.js"></script>
+  <script defer src="scripts/validate-inint.js"></script>
+  <script defer src="scripts/balance.js"></script>
+</head>
+
+<body class="body">
+
+  <header class="header">
+    <div class="header__container">
+      <div class="header-top">
+        <div class="container header-top__container">
+          <div class="header-top__left-wrapper">
+            <button class="header-top__burger">
+              <svg class="header-top__burger-icon" width="38" height="26" viewBox="0 0 38 26" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect class="header-top__burger-rect-one" width="38" height="4" rx="2" fill="white" />
+                <rect class="header-top__burger-rect-two" y="11" width="38" height="4" rx="2" fill="white" />
+                <rect class="header-top__burger-rect-three" y="22" width="38" height="4" rx="2" fill="white" />
+              </svg>
+            </button>
+            <div class="burger-menu">
+              <div class="burger-menu__wrapper">
+                <div class="burger-menu__btns-wrapper burger-menu__btns-wrapper_active">
+                  <a class="enter-link  burger-menu__btn burger-menu__enter">
+                    Вход
+                  </a>
+                  <a class="registration-link burger-menu__btn burger-menu__registration">
+                    Регистрация
+                  </a>
+                </div>
+                <div class="profile burger-menu__profile">
+                  <a href=""><img src="img/header/profile.png" alt="" class="profile__img"></a>
+                  <div class="profile__text-wrapper profile__text-wrapper_active">
+                    <a href="personal-area.html" class="profile__login">
+                      Disco Doplan
+                    </a>
+                    <span class="profile__balance-wrapper">
+                      Баланс: <span id="burger-balance" class="profile__balance coins-icon">0</span>
+                    </span>
+                  </div>
+                </div>
+                <ul class="burger-menu__list">
+                  <li class="burger-menu__item">
+                    <a href="#" class="burger-menu__link">
+                      Результаты
+                    </a>
+                  </li>
+                  <li class="burger-menu__item">
+                    <a href="#" class="burger-menu__link">
+                      Статистика игроков
+                    </a>
+                  </li>
+                  <li class="burger-menu__item">
+                    <a href="#" class="burger-menu__link">
+                      Статистика команд
+                    </a>
+                  </li>
+                  <li class="burger-menu__item">
+                    <a href="#" class="burger-menu__link">
+                      Рейтинг
+                    </a>
+                  </li>
+                  <li class="burger-menu__item">
+                    <a href="#" class="burger-menu__link">
+                      Вопрос-Ответ
+                    </a>
+                  </li>
+                  <li class="burger-menu__exit burger-menu__item">
+                    <a href="#" class="burger-menu__exit-link burger-menu__link">
+                      Выход
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+            <a href="#" class="logo-link header-top__logo-link">
+              <span class="logo header-top__logo"><span>EC </span>Sports</span>
+            </a>
+          </div>
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li class="header-nav__item">
+                <a href="#" class="header-nav__link">
+                  Результаты
+                </a>
+              </li>
+              <li class="header-nav__item header-nav__item-menu">
+                <a href="#" class="header-nav__link header-nav__link-menu">
+                  Статистика
+                </a>
+                <ul class="header-statistic-menu">
+                  <li class="header-statistic-menu__item">
+                    <a class="header-statistic-menu__link" href="#">
+                      Команды
+                    </a>
+                  </li>
+                  <li class="header-statistic-menu__item">
+                    <a class="header-statistic-menu__link" href="#">
+                      Игроки
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-nav__item">
+                <a href="#" class="header-nav__link">
+                  Рейтинг
+                </a>
+              </li>
+              <li class="header-nav__item">
+                <a href="#" class="header-nav__link">
+                  Вопрос-Ответ
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="authorized">
+            <div class="lang">
+              <div class="lang__icon-container">
+                <span data-target="russian" class="lang__icon lang__icon_active lang__icon-russian "></span>
+                <span data-target="english" class="lang__icon lang__icon-english "></span>
+              </div>
+              <ul class="lang__btn-list">
+                <li class="lang__btn-item">
+                  <button data-path="english" class="lang__btn lang__btn_english">
+                    English
+                  </button>
+                </li>
+                <li class="lang__btn-item">
+                  <button data-path="russian" class="lang__btn lang__btn_russian">
+                    Русский
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="notification">
+              <span class="notification__icon">
+                <span class="notification__icon-number">1</span>
+              </span>
+              <ul class="notification__list">
+                <li class="notification__item">
+                  <p class="notification__text">
+                    Вы выиграли <span class="coins-icon">200</span>
+                    на матче Natus Vincer vs Vitaly
+                  </p>
+                  <div class="notification__data-wrapper">
+                    <span class="notification__data">
+                      28.04.2021
+                    </span>
+                    <span class="notification__time">
+                      18:00
+                    </span>
+                  </div>
+                </li>
+                <li class="notification__item">
+                  <p class="notification__text">
+                    Вы сменили пароль
+                  </p>
+                  <div class="notification__data-wrapper">
+                    <span class="notification__data">
+                      28.04.2021
+                    </span>
+                    <span class="notification__time">
+                      18:00
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="profile">
+              <a href="personal-area.html"><img src="img/header/profile.png" alt="" class="profile__img"></a>
+              <div class="profile__text-wrapper">
+                <a href="personal-area.html" class="profile__login">
+                  Disco Doplan
+                </a>
+                <span class="profile__balance-wrapper">
+                  Баланс: <span id="balance" class="profile__balance coins-icon">0</span>
+                </span>
+              </div>
+              <ul class="profile__list">
+                <li class="profile__item">
+                  <a href="personal-area.html" class="profile__login">
+                    Disco Doplan
+                  </a>
+                  <span class="profile__inscription">
+                    Профиль
+                  </span>
+                </li>
+                <li class="profile__item">
+                  <a href="#" class="profile__link">
+                    Настройки
+                  </a>
+                </li>
+                <li class="profile__item">
+                  <a href="#" class="profile__link">
+                    Баланс: <span id="popUp-balance" class="profile__balance coins-icon">0</span>
+                  </a>
+                </li>
+                <li class="profile__item">
+                  <a href="#" class="profile__link">
+                    Выйти
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="header-top__btn-wrapper header-top__btn-wrapper_active">
+            <a class="enter-link header-top__btn header-top__btn_bg-color">
+              Вход
+            </a>
+            <a class="registration-link header-top__btn header-top__btn-registration header-top__btn_text-color">
+              Регистрация
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container header-bottom__container">
+          <form class="header-bottom__form" action="#">
+            <fieldset class="header-bottom__fieldset">
+              <legend class="header-bottom__legend">
+                Фильтры по играм:
+              </legend>
+              <label class="header-bottom__label">
+                <input required class="header-bottom__input" type="checkbox" checked>
+                <span class="header-bottom__checkbox header-bottom__checkbox_csgo"></span>
+                <span class="header-bottom__text">
+                  CS:GO
+                </span>
+              </label>
+              <label class="header-bottom__label">
+                <input required class="header-bottom__input" type="checkbox">
+                <span class="header-bottom__checkbox header-bottom__checkbox_dota"></span>
+                <span class="header-bottom__text">
+                  Dota 2
+                </span>
+              </label>
+              <label class="header-bottom__label">
+                <input required class="header-bottom__input" type="checkbox">
+                <span class="header-bottom__checkbox header-bottom__checkbox_lol"></span>
+                <span class="header-bottom__text">
+                  League of Legends
+                </span>
+              </label>
+              <label class="header-bottom__label">
+                <input required class="header-bottom__input" type="checkbox">
+                <span class="header-bottom__checkbox header-bottom__checkbox_valorant"></span>
+                <span class="header-bottom__text">
+                  Valorant
+                </span>
+              </label>
+            </fieldset>
+          </form>
+          <div class="header-bottom__wrapper">
+            <a href="#" class="header-bottom__others-link">
+              Другие игры
+            </a>
+            <form action="#" method="POST" class="header-bottom__others-form">
+              <ul class="header-bottom__others-list">
+                <li class="header-bottom__others-item">
+                  <span class="header-bottom__others-title header-bottom__others-title_csgo">CS:GO</span>
+                  <label class="header-bottom__others-label">
+                    <input required type="checkbox" class="header-bottom__others-input">
+                    <span class="header-bottom__others-checkbox"></span>
+                  </label>
+                </li>
+                <li class="header-bottom__others-item">
+                  <span class="header-bottom__others-title header-bottom__others-title_dota">Dota 2</span>
+                  <label class="header-bottom__others-label">
+                    <input required type="checkbox" class="header-bottom__others-input">
+                    <span class="header-bottom__others-checkbox"></span>
+                  </label>
+                </li>
+              </ul>
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="heaedr-forms-wrapper">
+        <div class="header-forms enter-form">
+          <div class="header-forms__wrapper header-forms__enter">
+            <div class="header-forms__title-wrapper">
+              <span class="header-forms__title">
+                Вход
+              </span>
+              <button class="header-forms__close enter-close">
+                <svg class="header-forms__close-icon" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.41406" width="24" height="2" rx="1" transform="rotate(45 1.41406 0)" fill="#75808C" />
+                  <rect x="0.414062" y="17" width="24" height="2" rx="1" transform="rotate(-45 0.414062 17)"
+                    fill="#75808C" />
+                </svg>
+              </button>
+            </div>
+            <form class="header-forms__form" autocomplete="off">
+              <input type="text" name="login or email" placeholder="Ваш логин или почта" class="header-forms__input">
+              <input type="password" autocomplete="on" name="password" placeholder="Ваш пароль"
+                class="header-forms__input">
+              <a href="#" class="header-forms__link recovery-link">
+                Забыли пароль?
+              </a>
+              <div class="header-forms__btns-wrapper">
+                <button type="submit" class="header-forms__btn enter">
+                  Вход
+                </button>
+                <a class="registration-link header-forms__btn-registration">
+                  Регистрация
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="header-forms recovery-form">
+          <div class="header-forms__wrapper header-forms__recovery">
+            <div class="header-forms__title-wrapper">
+              <span class="header-forms__title">
+                Восстановлние пароля
+              </span>
+              <button class="header-forms__close recovery-close">
+                <svg class="header-forms__close-icon" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.41406" width="24" height="2" rx="1" transform="rotate(45 1.41406 0)" fill="#75808C" />
+                  <rect x="0.414062" y="17" width="24" height="2" rx="1" transform="rotate(-45 0.414062 17)"
+                    fill="#75808C" />
+                </svg>
+              </button>
+            </div>
+            <form class="header-forms__form" autocomplete="off">
+              <input required type="text" name="login or email" placeholder="Ваш логин или почта"
+                class="header-forms__input">
+              <button type="submit" class="header-forms__btn">
+                Отправить письмо
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="header-forms registration-form">
+          <div class="header-forms__wrapper header-forms__enter">
+            <div class="header-forms__title-wrapper">
+              <span class="header-forms__title">
+                Регистрация
+              </span>
+              <button class="header-forms__close registration-close">
+                <svg class="header-forms__close-icon" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.41406" width="24" height="2" rx="1" transform="rotate(45 1.41406 0)" fill="#75808C" />
+                  <rect x="0.414062" y="17" width="24" height="2" rx="1" transform="rotate(-45 0.414062 17)"
+                    fill="#75808C" />
+                </svg>
+              </button>
+            </div>
+            <form class="header-forms__form js-form" action="https://jsonplaceholder.typicode.com/posts" method="POST"
+              autocomplete="off">
+              <input required type="text" name="login or email" placeholder="Придумайте логин"
+                class="header-forms__input">
+              <input required type="email" name="email" placeholder="Ваша почта" class="header-forms__input">
+              <input required type="password" autocomplete="on" name="password" data-validate-field="password"
+                placeholder="Пароль (минимум 6 символов)" class="header-forms__input">
+              <div data-theme="dark" class="header-forms__recaptcha g-recaptcha" data-sitekey="xxx"></div>
+              <div class="header-forms__btns-wrapper">
+                <button class="header-forms__btn-registration header-forms__btn-registration_blue">
+                  Регистрация
+                </button>
+                <a class="enter-link header-forms__btn header-forms__btn_inherit">
+                  Вход
+                </a>
+              </div>
+            </form>
+            <p class="header-forms__text">
+              Регистрируясь, вы принимаете <a class="header-forms__agreement" href="#">ползовательское соглашение,
+                политику конфиденциальности</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="coins-modal">
+        <div class="coins-modal__wrapper">
+          <p class="coins-modal__text">
+            Похоже, у вас закончились монеты :(
+          </p>
+          <p class="coins-modal__discription">
+            Но это не не проблема! Мы можем выдать вам еще <span class="coins-icon">100</span> , чтобы
+            вы попробовали еще раз, ставьте с умом и удачи.
+          </p>
+          <button class="coins-modal__btn">
+            Получить монеты
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="live">
+      <div class="container live__container">
+        <h2 class="live__title title">
+          Live матчи
+        </h2>
+        <ul class="live__list">
+          <li class="live__item">
+            <div class="card-match card-match__hot live__card-match">
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                </a>
+                <h4 class="card-match__team-title">
+                  Fnatic
+                </h4>
+                <span class="card-match__procent card-match__procent_green">
+                  20%
+                </span>
+              </div>
+              <div class="card-match__discription">
+                <h3 class="card-match__discription-title">
+                  Perfect World
+                </h3>
+                <div class="card-match__discription-type">
+                  <span class="card-match__discription-live">
+                    LIVE
+                  </span>
+                  <span class="card-match__discription-voz">
+                    ВОЗ
+                  </span>
+                </div>
+                <span class="card-match__discription-time">
+                  02:56:21
+                </span>
+                <button class="card-match__discription-btn">
+                  Смотреть
+
+                </button>
+
+              </div>
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/big.png" alt="team two">
+                </a>
+                <h4 class="card-match__team-title">
+                  Natus Vincere
+                </h4>
+                <span class="card-match__procent card-match__procent_red">
+                  12%
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="live__item">
+            <div class="card-match  live__card-match">
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                </a>
+                <h4 class="card-match__team-title">
+                  Fnatic
+                </h4>
+                <span class="card-match__procent card-match__procent_green">
+                  20%
+                </span>
+              </div>
+              <div class="card-match__discription">
+                <h3 class="card-match__discription-title">
+                  Perfect World
+                </h3>
+                <div class="card-match__discription-type">
+                  <span class="card-match__discription-live">
+                    LIVE
+                  </span>
+                  <span class="card-match__discription-voz">
+                    ВОЗ
+                  </span>
+                </div>
+                <span class="card-match__discription-time">
+                  02:56:21
+                </span>
+                <button class="card-match__discription-btn">
+                  Смотреть
+
+                </button>
+
+              </div>
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/navi.png" alt="team one">
+                </a>
+                <h4 class="card-match__team-title">
+                  Natus Vincere
+                </h4>
+                <span class="card-match__procent card-match__procent_red">
+                  12%
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="live__item">
+            <div class="card-match  live__card-match">
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                </a>
+                <h4 class="card-match__team-title">
+                  Fnatic
+                </h4>
+                <span class="card-match__procent card-match__procent_green">
+                  20%
+                </span>
+              </div>
+              <div class="card-match__discription">
+                <h3 class="card-match__discription-title">
+                  Perfect World
+                </h3>
+                <div class="card-match__discription-type">
+                  <span class="card-match__discription-live">
+                    LIVE
+                  </span>
+                  <span class="card-match__discription-voz">
+                    ВОЗ
+                  </span>
+                </div>
+                <span class="card-match__discription-time">
+                  02:56:21
+                </span>
+                <button class="card-match__discription-btn ">
+                  Смотреть
+
+                </button>
+
+              </div>
+              <div class="card-match__team">
+                <a href="#" class="card-match__team-link card-match__vue">
+                  <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                </a>
+                <h4 class="card-match__team-title">
+                  Natus Vincere
+                </h4>
+                <span class="card-match__procent card-match__procent_red">
+                  12%
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="forthcoming">
+      <div class="container forthcoming__container">
+        <div class="forthcoming__title-wrapper">
+          <h2 class="title forthcoming__title">
+            Предстоящие матчи
+          </h2>
+          <form action="#" class="forthcoming__form">
+            <input required type="search" placeholder="Поиск матча" class="forthcoming__input">
+            <button class="forthcoming__btn" type="submit"></button>
+          </form>
+        </div>
+        <div class="forthcoming__swiper-container swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="forthcoming__swiper-wrapper swiper-wrapper">
+            <!-- Slides -->
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/astralis.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="forthcoming__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time">
+                    02:56:21
+                  </span>
+
+
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link card-match__vue">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="forthcoming__swiper-elements">
+          <div class="forthcoming__swiper-pagination swiper-pagination"></div>
+          <div class="forthcoming__swiper-button-prev swiper-button-prev"></div>
+          <div class="forthcoming__swiper-button-next swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="past">
+      <div class="container past__container">
+        <h2 class="title past__title">
+          Прошедшие матчи
+        </h2>
+        <div class="past__swiper-container swiper-container">
+          <div class="past__swiper-wrapper swiper-wrapper">
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/fnatic.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/liquid.png" alt="team one">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/navi.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/big.png" alt="team two">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="past__swiper-slide swiper-slide">
+              <div class="card-match forthcoming__card-match">
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/spirit.png" alt="team one">
+                    <span class="card-match__icon card-match__crown"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Fnatic
+                  </h4>
+                  <span class="card-match__procent card-match__procent_green">
+                    20%
+                  </span>
+                </div>
+                <div class="card-match__discription">
+                  <h3 class="card-match__discription-title past__discription-title">
+                    Perfect World
+                  </h3>
+                  <div class="card-match__discription-type">
+                    <span class="card-match__discription-voz past__discription-voz">
+                      ВОЗ
+                    </span>
+                  </div>
+                  <span class="card-match__discription-time past__discription-time">
+                    02:56:21
+                  </span>
+                  <span class="card-match__score">
+                    2 : 1
+                  </span>
+                </div>
+                <div class="card-match__team">
+                  <a href="#" class="card-match__team-link">
+                    <img class="card-match__img" src="img/live/mouse.png" alt="team two">
+                    <span class="card-match__icon"></span>
+                  </a>
+                  <h4 class="card-match__team-title">
+                    Natus Vincere
+                  </h4>
+                  <span class="card-match__procent card-match__procent_red">
+                    12%
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="past__swiper-elements">
+          <div class="past__swiper-pagination swiper-pagination"></div>
+          <div class="past__swiper-button-prev swiper-button-prev"></div>
+          <div class="past__swiper-button-next swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <a href="#" class="footer__logo-link logo-link">
+        <span class="logo "><span>EC </span>Sports</span>
+      </a>
+      <div class="footer__wrapper">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link">
+              Поддержка
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">
+              Политика конфиденциальности
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">
+              Соглашение
+            </a>
+          </li>
+        </ul>
+      </div>
+      <span class="footer__year">
+        2021 ©Electronic Cyber Sports
+      </span>
+    </div>
+  </footer>
+</body>
+
+</html>

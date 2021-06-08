@@ -1,0 +1,124 @@
+.forthcoming {
+  &__container {
+    position: relative;
+    padding-top: 43px;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    display: flex;
+    background-color: #414754;
+    padding: 18px 9vw 18px 20px;
+    border-radius: 47px;
+  }
+
+  &__input {
+    order: 2;
+    background-color: #414754;
+    border: none;
+    color: var(--text-color);
+    &::placeholder {
+      color: #75808c;
+    }
+  }
+  &__btn {
+    width: 24px;
+    height: 24px;
+    background-color: #414754;
+    background: url("../img/forthcoming/search.svg") no-repeat center;
+    order: 1;
+    border: none;
+  }
+  &__cardmatch {
+  }
+}
+
+// swiper
+.forthcoming__swiper-container {
+  min-width: 0;
+  max-width: 1218px;
+  height: 830px;
+}
+
+.forthcoming__swiper-slide {
+  height: calc((100% / 4) - 30px);
+}
+
+.forthcoming__swiper-button-prev,
+.forthcoming__swiper-button-next {
+  top: 100%;
+}
+
+.forthcoming__swiper-button-prev {
+  left: 45%;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #4384ff;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #4384ff;
+  }
+  &::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-right: 3px solid #4384ff;
+    border-bottom: 3px solid #4384ff;
+    transform: rotate(135deg);
+    position: absolute;
+    transition: border-color 0.3s ease;
+  }
+  &:hover::after {
+    border-color: #fff;
+  }
+}
+
+.forthcoming__swiper-button-next {
+  right: 45%;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #4384ff;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #4384ff;
+  }
+  &::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-right: 3px solid #4384ff;
+    border-bottom: 3px solid #4384ff;
+    position: absolute;
+    transform: rotate(315deg);
+    transition: border-color 0.3s ease;
+  }
+  &:hover::after {
+    border-color: #fff;
+  }
+}
+.forthcoming__swiper-pagination {
+  bottom: 0;
+  width: fit-content;
+  left: 48.5%;
+  color: var(--text-color);
+}
+
+.forthcoming__swiper-elements {
+  margin-top: 20px;
+  position: relative;
+}
+
+
+

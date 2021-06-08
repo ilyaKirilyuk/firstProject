@@ -1,0 +1,33 @@
+const elementLang = document.querySelector('.profile-wrapper__select');
+const choicesLang = new Choices(elementLang, {
+  searchEnabled: false,
+  itemSelectText: '',
+  classNames: {
+    containerOuter: 'lang-choices',
+    containerInner: 'lang-choices__inner',
+    input: 'lang-choices__input',
+    inputCloned: 'lang-choices__input--cloned',
+    list: 'lang-choices__list',
+    listItems: 'lang-choices__list--multiple',
+    listSingle: 'lang-choices__list--single',
+    listDropdown: 'lang-choices__list--dropdown',
+    item: 'lang-choices__item',
+    itemSelectable: 'lang-choices__item--selectable',
+    itemDisabled: 'lang-choices__item--disabled',
+    itemChoice: 'lang-choices__item--choice',
+    placeholder: 'lang-choices__placeholder',
+    group: 'lang-choices__group',
+    groupHeading: 'lang-choices__heading',
+    button: 'lang-choices__button',
+    activeState: 'is-active',
+    focusState: 'is-focused',
+    openState: 'is-open',
+    disabledState: 'is-disabled',
+    highlightedState: 'is-highlighted',
+    selectedState: 'is-selected',
+    flippedState: 'is-flipped',
+    loadingState: 'is-loading',
+    noResults: 'has-no-results',
+    noChoices: 'has-no-choices'
+  },
+});

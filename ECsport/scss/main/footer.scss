@@ -1,0 +1,43 @@
+.footer {
+  background-color: #363b46;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 3vw;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    &:hover {
+      color: #4384ff;
+    }
+  }
+
+  &__year {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #75808c;
+  }
+}
+
+

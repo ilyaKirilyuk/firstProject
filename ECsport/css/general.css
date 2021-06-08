@@ -1,0 +1,246 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --text-color: #fff;
+  --second-text-color: #75808c;
+}
+
+.body {
+  font-family: "Gilroy", sans-serif;
+  background-color: #30343c;
+  margin: 0;
+  min-width: 360px;
+}
+
+.container {
+  max-width: 1248px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 38px;
+  line-height: 46px;
+  color: var(--text-color);
+}
+
+.card-match {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #363b46;
+  background-image: url("../img/live/VS.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 19px 0;
+}
+
+.card-match__team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 calc(100% / 3);
+          flex: 1 0 calc(100% / 3);
+}
+
+.card-match__team:hover .card-match__vue::after {
+  opacity: 1;
+}
+
+.card-match__crown {
+  background: url("../img/live/crown.svg") no-repeat top center;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  right: 33%;
+}
+
+.card-match__score {
+  color: var(--text-color);
+  padding: 8.5px 16px;
+  background: #4384ff;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 3px 20px rgba(62, 163, 255, 0.5);
+          box-shadow: 0px 3px 20px rgba(62, 163, 255, 0.5);
+}
+
+.card-match__hot {
+  position: relative;
+}
+
+.card-match__hot::before {
+  content: "";
+  position: absolute;
+  background: url("../img/live/fire.svg") no-repeat;
+  width: 100px;
+  height: 100px;
+  top: -40px;
+}
+
+.card-match__team-link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.card-match__vue::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 71, 84, 0.7);
+  background-image: url("../img/live/pluse.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.card-match__img {
+  width: 68px;
+  height: 68px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.card-match__team-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--text-color);
+  margin: 12px 0;
+}
+
+.card-match__procent {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--text-color);
+  padding: 5px 15px;
+  border-radius: 6px;
+}
+
+.card-match__procent_green {
+  background-color: rgba(110, 199, 96, 0.4);
+}
+
+.card-match__procent_red {
+  background-color: rgba(225, 83, 83, 0.4);
+}
+
+.card-match__discription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 calc(100% / 3);
+          flex: 1 0 calc(100% / 3);
+}
+
+.card-match__discription-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--text-color);
+  margin: 0;
+  padding-left: 25px;
+  background: url("../img/header/csgo.png") no-repeat left;
+  background-size: contain;
+}
+
+.card-match__discription-live {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--text-color);
+  padding-left: 20px;
+  margin-right: 10px;
+  background: url("../img/live/live.png") no-repeat left center;
+  background-size: 14px;
+}
+
+.card-match__discription-voz {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #75808c;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.card-match__discription-time {
+  color: #75808c;
+  margin-bottom: 10px;
+}
+
+.card-match__team-two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 calc(100% / 3);
+          flex: 1 0 calc(100% / 3);
+}
+
+.card-match__discription-btn {
+  display: inline-block;
+  min-width: 125px;
+  height: 40px;
+  border-radius: 40px;
+  background: none;
+  color: #4384ff;
+  cursor: pointer;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 0px 1px #4384ff inset;
+          box-shadow: 0px 0px 0px 1px #4384ff inset;
+  -webkit-transition: height 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  transition: height 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.card-match__discription-btn:hover {
+  color: var(--text-color);
+  background-color: #4384ff;
+}

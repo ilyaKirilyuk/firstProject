@@ -1,0 +1,690 @@
+@import "fonts.scss";
+@import "general.scss";
+@import "header.scss";
+@import "live.scss";
+@import "forthcoming.scss";
+@import "past.scss";
+@import "footer.scss";
+@import "media.scss";
+
+.main {
+}
+.personal {
+  &__container {
+    display: flex;
+    margin: 0 -15px;
+  }
+  &__title {
+    margin-top: 100px;
+    margin-bottom: 45px;
+  }
+  &__card-wrapper {
+    flex: 0 1 calc(34.6% - 15px);
+    padding: 0 15px;
+
+  }
+  &__stat-name {
+    color: #75808c;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  &__stat {
+    padding-left: 25px;
+    color: var(--text-color);
+    &_coins {
+      background: url("../../img/header/coins.svg") no-repeat 0 center;
+      background-size: contain;
+    }
+  }
+}
+
+.personal-blocks {
+  display: flex;
+  flex: 0 1 calc(68.4% - 15px);
+  padding: 0 15px;
+  flex-direction: column;
+}
+.personal-card {
+  display: flex;
+  flex-direction: column;
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__discription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 40px 30px 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #363b46;
+  }
+
+  &__img {
+    width: 124px;
+    height: 124px;
+    margin-bottom: 30px;
+  }
+
+  &__login {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #75808c;
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+
+  &__progress-wrapper {
+    padding-left: 50px;
+    background: url("../../img/personal-area/ranks/rank-five.png") no-repeat center left;
+  }
+
+  &__exp-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__lvl {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+  }
+
+  &__exp {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--second-text-color);
+  }
+
+  &__progressbar {
+    height: 6px;
+    width: 247px;
+    background: #414754;
+    border-radius: 55px;
+  }
+
+  &__prodressbar-exp {
+    width: 25%;
+    height: 100%;
+    background: #4384ff;
+    border-radius: 55px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #363b46;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid#414754;
+  }
+
+  &__customization {
+    display: inline-block;
+    padding: 19.5px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+    background: #4384ff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0px 3px 20px rgba(62, 163, 255, 0.5);
+    transition: background 0.3s ease;
+    &:hover {
+      background: #3771de;
+    }
+  }
+}
+.personal-blocks {
+  margin-bottom: 150px;
+}
+.statistic {
+  padding: 30px 30px 1px 30px;
+  background: #363b46;
+  border-radius: 20px;
+  flex: 0 1 auto;
+  margin-bottom: 30px;
+  &__list {
+    list-style: none;
+    margin: 0 -10px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #3a3f49;
+    border-radius: 10px;
+    flex: auto;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 0 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex: 0 1 calc((100% - 10px) / 3);
+  }
+  &__numbers {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+    flex-basis: 100%;
+    &_width {
+      flex-basis: 0;
+    }
+  }
+  &__progressbar-wrapper {
+    width: 100%;
+    height: 6px;
+    border-radius: 40px;
+    background: #e15353;
+  }
+  &__progressbar {
+    width: 53%;
+    height: 100%;
+    border-radius: 40px;
+    background: #6ec760;
+  }
+  &__name {
+    margin-bottom: 10px;
+  }
+}
+.personal-blocks-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+.bets {
+  background: #363b46;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  &__process {
+    padding: 5px 10px;
+    color: var(--text-color);
+    background: rgba(117, 128, 140, 0.4);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background: #3a3f49;
+    border-radius: 10px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__teams-wrapper {
+    margin-right: 15px;
+    padding-left: 32px;
+    &_cs {
+      background: url("../../img/header/csgo.png") no-repeat left center;
+      background-size: 12px;
+    }
+    &_dota {
+      background: url("../../img/header/dota2.png") no-repeat left center;
+      background-size: 12px;
+    }
+  }
+
+  &__team {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+  }
+
+  &__event {
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  &__event-name {
+    max-width: 20vw;
+    margin-right: auto;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__event-time {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #75808c;
+  }
+
+  &__result-wrapper {
+  }
+
+  &__lose {
+    background: rgba(225, 83, 83, 0.4);
+  }
+
+  &__result {
+    padding: 5px 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+    border-radius: 6px;
+    margin-right: 8px;
+    display: inline-block;
+    min-width: 65px;
+  }
+
+  &__coins {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    padding-right: 25px;
+    background: url('../../img/header/coins.svg') no-repeat center right;
+    background-size: 18px;
+  }
+
+  &__win {
+    background: rgba(110, 199, 96, 0.4);
+  }
+}
+
+.achievements {
+  padding: 30px;
+  background: #363b46;
+  border-radius: 20px;
+
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("../../img/personal-area/medal.png");
+      position: absolute;
+      z-index: 2;
+      width: 34px;
+      height: 34px;
+      left: 20px;
+      top: 30%;
+    }
+    &_done {
+      position: relative;
+      &:after {
+        content: "";
+        background-image: url("../../img/personal-area/done.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 30px;
+        top: 35%;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__pogress-wrapper {
+    height: 75px;
+    background: #3a3f49;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  &__progress {
+    height: 100%;
+    background: #4384ff;
+    border-radius: 10px;
+    &-one {
+      width: 100%;
+    }
+    &-two {
+      width: 75%;
+    }
+    &-three {
+      width: 50%;
+    }
+    &-four {
+      width: 25%;
+    }
+    &-five {
+      width: 0%;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 65px;
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+  }
+
+  &__numbers {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .personal-card {
+    &__discription {
+      padding: 50px 10px 30px 10px;
+    }
+    &__progressbar {
+      width: 214px;
+    }
+  }
+  .personal-blocks-title {
+    margin-top: 0px;
+  }
+  .personal__stat-name {
+    font-size: 17px;
+  }
+  .statistic__name {
+    margin-bottom: 0px;
+  }
+  .bets__event-name {
+    max-width: 23vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .personal {
+    &__container {
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      margin-top: 70px;
+      margin-bottom: 35px;
+    }
+    &__card-wrapper {
+      flex: 0 1 100%;
+    }
+  }
+  .personal-blocks {
+    flex: 0 1 100%;
+  }
+  .personal-card {
+    margin-bottom: 15px;
+    &__discription {
+      padding: 30px;
+      align-items: flex-start;
+    }
+
+    &__content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__text-wrapper {
+      align-items: flex-start;
+    }
+    &__img {
+      margin-right: 20px;
+    }
+  }
+  .personal-blocks-title {
+    margin-bottom: 35px;
+  }
+  .statistic {
+    margin-bottom: 20px;
+    &__item-wrapper {
+      padding: 15px;
+    }
+  }
+  .bets {
+    &__event-name {
+      max-width: 37vw;
+    }
+    &__item {
+      padding: 15px;
+    }
+    &__result {
+      margin-right: 0px;
+    }
+    &__teams-wrapper {
+      padding-left: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .personal-card {
+    &__img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+    &__login {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 0;
+    }
+    &__link {
+      font-size: 13px;
+      line-height: 15px;
+      margin-bottom: 20px;
+    }
+    &__lvl {
+      font-size: 13px;
+      line-height: 16px;
+    }
+    &__exp-wrapper {
+      margin-bottom: 5px;
+    }
+    &__exp {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    &__progressbar {
+      width: 153px;
+    }
+    &__customization {
+      font-size: 13px;
+      line-height: 16px;
+      padding: 12px;
+    }
+    &__list {
+      margin-bottom: 20px;
+    }
+    &__discription {
+      padding: 20px;
+    }
+    &__item {
+      padding: 16px;
+    }
+  }
+  .personal {
+    &__stat-name {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    &__stat {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    &__card-wrapper {
+      padding: 0;
+    }
+    &__container {
+      margin: 0;
+    }
+    &__title {
+      margin-top: 35px;
+      margin-bottom: 20px;
+    }
+  }
+  .personal-blocks {
+    padding: 0;
+  }
+  .statistic {
+    padding: 25px 20px 25px 20px;
+    &__numbers {
+      font-size: 13px;
+      line-height: 16px;
+    }
+    &__item {
+      flex: 0 1 calc(100% / 2);
+      margin-bottom: 10px;
+    }
+    &__item-wrapper {
+      padding: 10px;
+    }
+  }
+  .personal-blocks-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 20px;
+  }
+  .bets {
+    padding: 20px;
+    &__team {
+      width: 20px;
+      height: 20px;
+    }
+    &__link {
+      line-height: 16px;
+      font-size: 13px;
+    }
+    &__event-time {
+      line-height: 16px;
+      font-size: 13px;
+    }
+    &__process {
+      line-height: 16px;
+      font-size: 13px;
+    }
+    &__result {
+      line-height: 16px;
+      font-size: 13px;
+      min-width: 0;
+      max-width: 55px;
+    }
+
+    &__teams-wrapper {
+      margin: 0;
+      flex: 1 0 auto;
+      margin-right: 10px;
+    }
+    &__item {
+      justify-content: space-between;
+    }
+    &__event-name {
+      margin-right: 10px;
+    }
+    &__coins {
+      line-height: 16px;
+      font-size: 13px;
+      background-size: 13px;
+      max-width: 55px;
+    }
+    &__result-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex: 1 0 25%;
+    }
+  }
+
+  .achievements {
+    padding: 20px;
+    &__text {
+      line-height: 16px;
+      font-size: 13px;
+    }
+    &__numbers {
+      line-height: 16px;
+      font-size: 13px;
+    }
+    &__pogress-wrapper {
+      height: 65px;
+    }
+    &__item::before {
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+    }
+    &__item_done:after {
+      width: 14px;
+      height: 14px;
+      background-size: contain;
+    }
+    &__item:nth-child(3) {
+      display: none;
+    }
+    &__list {
+      margin: 0;
+    }
+  }
+  .personal-blocks {
+    margin-bottom: 60px;
+  }
+}

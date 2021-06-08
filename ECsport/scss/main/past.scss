@@ -1,0 +1,89 @@
+.past {
+  &__container {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    margin-bottom: 49px;
+  }
+
+  &__swiper-container {
+    max-width: 1218px;
+    height: 420px;
+  }
+
+  &__swiper-wrapper {
+  }
+
+  &__swiper-slide {
+    height: calc((100% / 2) - 30px);
+  }
+
+  &__swiper-button-prev,
+  &__swiper-button-next {
+    top: 100%;
+  }
+  &__swiper-button-prev {
+    left: 45%;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #4384ff;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    &:hover {
+      background: #4384ff;
+    }
+    &::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 3px solid #4384ff;
+      border-bottom: 3px solid #4384ff;
+      transform: rotate(135deg);
+      position: absolute;
+      transition: border-color 0.3s ease;
+    }
+    &:hover::after {
+      border-color: #fff;
+    }
+  }
+  &__swiper-button-next {
+    right: 45%;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #4384ff;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #4384ff;
+    }
+    &::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 3px solid #4384ff;
+      border-bottom: 3px solid #4384ff;
+      position: absolute;
+      transform: rotate(315deg);
+      transition: border-color 0.3s ease;
+    }
+    &:hover::after {
+      border-color: #fff;
+    }
+  }
+  &__swiper-pagination {
+    bottom: 0;
+    width: fit-content;
+    left: 48.5%;
+    color: var(--text-color);
+  }
+  &__swiper-elements {
+    margin-top: 20px;
+    position: relative;
+  }
+}
+
+

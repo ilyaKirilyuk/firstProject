@@ -1,0 +1,175 @@
+[class*="ground-pane"] {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.just-validate-tooltip-container {
+  width: 400px;
+}
+
+.contacts__title {
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1630px;
+  margin-bottom: 20px;
+}
+
+.contacts__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid #cacaca;
+}
+
+.contacts__content-wrapper {
+  padding: 100px 6.35417vw 0 Max(30px, calc((100vw - 1600px) / 2));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts__adress-name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.contacts__adress {
+  font-style: normal;
+  margin-bottom: 36px;
+}
+
+.contacts__mobile-map {
+  width: 64.47917vw;
+  height: 320px;
+  display: none;
+}
+
+.contacts__form-title {
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 0;
+  color: var(--text-color);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.contacts__form {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts__input {
+  margin-bottom: 23px;
+  border: 1px solid #333333;
+  border-radius: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-color: var(--text-color);
+  width: 100%;
+}
+
+.contacts__input:focus {
+  outline: none;
+}
+
+.contacts__input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+.contacts__input:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.contacts__input::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.contacts__input::placeholder {
+  font-size: 16px;
+}
+
+.contacts__btn {
+  padding: 17px 35px;
+  max-width: 160px;
+  border-radius: 100px;
+  background: none;
+  color: var(--active-color);
+  border: 1px solid var(--active-color);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 19px;
+}
+
+.contacts__btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.contacts__links-title {
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.contacts__messenger_whatsupp {
+  background: url("../img/contacts/whutsupp.svg") no-repeat;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin-right: 10px;
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+.contacts__messenger_whatsupp:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.contacts__messenger_telegram {
+  background: url("../img/contacts/telegram.svg") no-repeat;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+.contacts__messenger_telegram:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.contacts__map {
+  width: 64.47917vw;
+  height: 700px;
+}

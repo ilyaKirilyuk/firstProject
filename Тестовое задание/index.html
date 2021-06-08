@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduslim</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+  <script defer src="scripts/choise.init.js"></script>
+  <script defer src="scripts/inputmask.min.js"></script>
+  <script defer src="scripts/mask-init.js"></script>
+</head>
+
+<body class="body">
+  <div class="container">
+    <div class="block-wrapper">
+      <div class="visual">
+        <span class="visual__text visual__text_reduslim">
+          Reduslim
+        </span>
+        <img src="img/reduslim.png" alt="препорат Reduslim ECO" class="visual__img">
+        <span class="visual__text visual__text_eco">
+          ECO
+        </span>
+      </div>
+      <div class="form-wrapper">
+        <p class="form-title">
+          Сделай шаг к&nbsp;выздоровлению
+        </p>
+        <form action="https://jsonplaceholder.typicode.com/posts" class="form" method="POST">
+          <label class="form__label"><span class="form__text">Ваше&nbsp;<span class="form__name">имя</span></span>
+            <input placeholder="Алексей" type="text" name="name" class="form__input">
+          </label>
+          <label for="tel" class="form__label form__label_tel"><span class="form__text">Ваш&nbsp;<span class="form__name">телефон</span></span></label>
+            <span class="form__tel-wrapper">
+              <input id="tel" placeholder="+7 (123) 456 78-90" type="tel" name="tel" class="form__input form__input_width">
+              <select class="form__select js-choice" name="lang">
+                <option class="form__option" value="RU">
+                  RU
+                </option>
+              </select>
+            </span>
+          <button class="form__btn" type="submit">
+            Заказать
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="trusted-wrapper">
+    <p class="trusted">
+      Trusted Secure
+    </p>
+  </div>
+</body>
+
+</html>
